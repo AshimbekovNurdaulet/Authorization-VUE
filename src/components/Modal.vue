@@ -6,6 +6,7 @@
           <span class="button-close" @click="$emit('close')">×</span>
         </div>
         <div class="modal-body">
+          <slot name="body"> default body </slot>
         </div>
       </div>
     </div>
@@ -23,6 +24,7 @@ export default {
     document.body.addEventListener('keydown', e => {
       if (e.keyCode === 27) this.$emit('close')
     })
+    // Закрытия окна по нажатию ESC
   },
   computed: {},
   methods: {}
